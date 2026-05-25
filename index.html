@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-panel">
+      <p class="eyebrow">Task 5</p>
+      <h1>Weather data, wherever you are.</h1>
+      <p class="hero-copy">
+        Check the current weather using your live location or search for any city
+        to see temperature, wind, humidity, and the overall conditions instantly.
+      </p>
+
+      <div class="hero-actions">
+        <button class="action-button action-button-primary" id="locationBtn" type="button">
+          Use My Location
+        </button>
+        <a class="action-button action-button-secondary" href="#weatherCard">
+          View Forecast
+        </a>
+      </div>
+
+      <div class="hero-tags">
+        <span>Live API data</span>
+        <span>City search</span>
+        <span>Responsive design</span>
+      </div>
+    </section>
+
+    <section class="weather-panel" id="weatherCard" aria-labelledby="weatherHeading">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">Current Conditions</p>
+          <h2 id="weatherHeading">Weather Dashboard</h2>
+        </div>
+        <p class="last-updated" id="lastUpdated">Ready for a weather check</p>
+      </div>
+
+      <form class="search-bar" id="searchForm">
+        <label class="sr-only" for="cityInput">Search city</label>
+        <input id="cityInput" name="city" type="text" placeholder="Enter a city name" autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+
+      <p class="status-message" id="statusMessage">Search for a city or use your current location.</p>
+
+      <section class="weather-card is-empty" id="resultCard" aria-live="polite">
+        <div class="weather-overview">
+          <div>
+            <p class="location-name" id="locationName">No location selected</p>
+            <h3 class="temperature" id="temperature">-- deg C</h3>
+            <p class="condition-text" id="conditionText">Waiting for weather data</p>
+          </div>
+          <div class="weather-badge" id="weatherBadge">--</div>
+        </div>
+
+        <div class="weather-grid">
+          <article class="weather-metric">
+            <span>Feels Like</span>
+            <strong id="feelsLike">-- deg C</strong>
+          </article>
+          <article class="weather-metric">
+            <span>Wind Speed</span>
+            <strong id="windSpeed">-- km/h</strong>
+          </article>
+          <article class="weather-metric">
+            <span>Humidity</span>
+            <strong id="humidity">--%</strong>
+          </article>
+          <article class="weather-metric">
+            <span>Day / Night</span>
+            <strong id="dayNight">--</strong>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
